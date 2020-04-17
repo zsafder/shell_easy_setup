@@ -30,6 +30,7 @@ mkdir -p ~/bin && cp ./aws-iam-authenticator ~/bin/aws-iam-authenticator
 curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22/bin/linux/amd64/kubectl
 chmod +x ./kubectl
 mkdir -p ~/bin && cp ./kubectl ~/bin/kubectl
+echo '. <(kubectl completion zsh)' >>  ~/.zshrc
 #update PATH 
 echo 'export PATH=$PATH:~/bin' >> ~/.zshrc
 #install helm package manager
