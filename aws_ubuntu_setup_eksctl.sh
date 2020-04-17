@@ -37,3 +37,7 @@ echo 'export PATH=$PATH:~/bin' >> ~/.zshrc
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
 chmod 700 get_helm.sh
 ./get_helm.sh
+#install stern
+wget https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64
+chmod +x stern_linux_amd64
+mv stern_linux_amd64 /usr/local/bin/stern
