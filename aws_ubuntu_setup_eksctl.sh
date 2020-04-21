@@ -4,7 +4,10 @@ apt update -y
 apt install -y zsh
 chsh -s $(which zsh)
 yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-sed -i "/plugins=(git)/c\plugins=(git extract git-extras vagrant kubectl helm)" ~/.zshrc
+#install zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+sed -i "/plugins=(git)/c\plugins=(git extract git-extras vagrant kubectl helm zsh-syntax-highlighting zsh-autosuggestions)" ~/.zshrc
 #install python-pip
 apt install -y python-pip
 #install aws-cli
