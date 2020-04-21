@@ -1,4 +1,4 @@
-# shell-helper-scripts
+# Shell Easy Setup Project
 Collection of Shell Helper script to make helper life easier in setting up the different enviroment with fun.
 
 ## aws_ubuntu_setup_eksctl.sh
