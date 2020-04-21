@@ -14,6 +14,8 @@ apt install -y ec2-api-tools
 REGION=`/usr/bin/ec2metadata | grep "^availability-zone:" | awk '{print substr($2, 1, length($2)-1)}'`
 aws configure set default.region $REGION
 aws configure set default.output yaml
+#update PATH 
+echo 'export PATH=$PATH:~/bin' >> ~/.zshrc
 #install eks
 curl --location "https://github.com/weaveworks/eksctl/releases/download/0.17.0-rc.0/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 mv /tmp/eksctl /usr/local/bin
@@ -31,8 +33,6 @@ curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.15.10/2020-02-22
 chmod +x ./kubectl
 mkdir -p ~/bin && cp ./kubectl ~/bin/kubectl
 echo '. <(kubectl completion zsh)' >>  ~/.zshrc
-#update PATH 
-echo 'export PATH=$PATH:~/bin' >> ~/.zshrc
 #install helm package manager
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
 chmod 700 get_helm.sh
