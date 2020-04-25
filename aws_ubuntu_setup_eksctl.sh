@@ -40,6 +40,9 @@ echo '. <(kubectl completion zsh)' >>  ~/.zshrc
 curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 > get_helm.sh
 chmod 700 get_helm.sh
 ./get_helm.sh
+## Add official stable Helm repository
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm repo update
 #install stern
 wget https://github.com/wercker/stern/releases/download/1.11.0/stern_linux_amd64
 chmod +x stern_linux_amd64
