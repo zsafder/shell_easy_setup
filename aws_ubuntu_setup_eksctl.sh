@@ -49,3 +49,5 @@ chmod +x stern_linux_amd64
 mv stern_linux_amd64 /usr/local/bin/stern
 #install tree
 apt-get install tree
+#install jq
+apt install -y jq
